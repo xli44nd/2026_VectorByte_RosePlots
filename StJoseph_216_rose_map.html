@@ -696,7 +696,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_bfd82f0663c43e10dc70b7234ed590db {
+                #map_0fd30447ddc85ac17587ceec04d3bd80 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -738,7 +738,7 @@ const APP = {"sites": [{"id": "chart-0", "lat": 41.75446, "lon": -86.52639999999
 // folium declares its map variable further down the page, so resolve it lazily
 // at boot time rather than while this script is being parsed.
 let MAP = null;
-function getMap() { try { return map_bfd82f0663c43e10dc70b7234ed590db; } catch (e) { return null; } }
+function getMap() { try { return map_0fd30447ddc85ac17587ceec04d3bd80; } catch (e) { return null; } }
 
 function currentView() { return document.getElementById('roseView').value; }
 function perSite()     { return document.getElementById('roseScale').checked; }
@@ -852,14 +852,14 @@ window.addEventListener('load', () => setTimeout(boot, 300));
   Hover a petal for the value and the days sampled.</span>
 </div>
     
-            <div class="folium-map" id="map_bfd82f0663c43e10dc70b7234ed590db" ></div>
+            <div class="folium-map" id="map_0fd30447ddc85ac17587ceec04d3bd80" ></div>
         
 </body>
 <script>
     
     
-            var map_bfd82f0663c43e10dc70b7234ed590db = L.map(
-                "map_bfd82f0663c43e10dc70b7234ed590db",
+            var map_0fd30447ddc85ac17587ceec04d3bd80 = L.map(
+                "map_0fd30447ddc85ac17587ceec04d3bd80",
                 {
                     center: [41.746505657573294, -86.49547592874592],
                     crs: L.CRS.EPSG3857,
@@ -876,7 +876,7 @@ window.addEventListener('load', () => setTimeout(boot, 300));
 
         
     
-            var tile_layer_1539bda2488fe2d89be3a336c457f80e = L.tileLayer(
+            var tile_layer_81372610b4d87d94e452d774104c4d85 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -893,17 +893,17 @@ window.addEventListener('load', () => setTimeout(boot, 300));
             );
         
     
-            tile_layer_1539bda2488fe2d89be3a336c457f80e.addTo(map_bfd82f0663c43e10dc70b7234ed590db);
+            tile_layer_81372610b4d87d94e452d774104c4d85.addTo(map_0fd30447ddc85ac17587ceec04d3bd80);
         
     
-            var marker_ea2032f9388e95f6d6676dd3a0a5d481 = L.marker(
+            var marker_97fb709bd5878591c0cf07907159c9b4 = L.marker(
                 [41.75446, -86.52639999999998],
                 {
 }
-            ).addTo(map_bfd82f0663c43e10dc70b7234ed590db);
+            ).addTo(map_0fd30447ddc85ac17587ceec04d3bd80);
         
     
-            var div_icon_7106faa809bf734f87051d0abbb95132 = L.divIcon({
+            var div_icon_839d25c91316dc339553d4036d8bd5f3 = L.divIcon({
   "html": "\u003cdiv id=\"chart-0\" class=\"rose-chart\" style=\"width:120px;height:120px;transform-origin:center center;overflow:visible\"\u003e\u003c/div\u003e",
   "iconSize": [120, 120],
   "iconAnchor": [60, 60],
@@ -911,7 +911,7 @@ window.addEventListener('load', () => setTimeout(boot, 300));
 });
         
     
-            marker_ea2032f9388e95f6d6676dd3a0a5d481.bindTooltip(
+            marker_97fb709bd5878591c0cf07907159c9b4.bindTooltip(
                 `<div>
                      LaPorte County &middot; 1 trap location(s) &middot; 37 day(s) sampled
                  </div>`,
@@ -921,17 +921,17 @@ window.addEventListener('load', () => setTimeout(boot, 300));
             );
         
     
-                marker_ea2032f9388e95f6d6676dd3a0a5d481.setIcon(div_icon_7106faa809bf734f87051d0abbb95132);
+                marker_97fb709bd5878591c0cf07907159c9b4.setIcon(div_icon_839d25c91316dc339553d4036d8bd5f3);
             
     
-            var marker_30ac350568fd5dd0398e5d7bdb08c340 = L.marker(
+            var marker_e375802051fd74c31d5c05805bb005ab = L.marker(
                 [41.73855131514658, -86.46455185749184],
                 {
 }
-            ).addTo(map_bfd82f0663c43e10dc70b7234ed590db);
+            ).addTo(map_0fd30447ddc85ac17587ceec04d3bd80);
         
     
-            var div_icon_387fd91e140fd8e576b53e2d23b7c0e2 = L.divIcon({
+            var div_icon_e2081a33fad99f4359f633288363ec11 = L.divIcon({
   "html": "\u003cdiv id=\"chart-1\" class=\"rose-chart\" style=\"width:120px;height:120px;transform-origin:center center;overflow:visible\"\u003e\u003c/div\u003e",
   "iconSize": [120, 120],
   "iconAnchor": [60, 60],
@@ -939,7 +939,7 @@ window.addEventListener('load', () => setTimeout(boot, 300));
 });
         
     
-            marker_30ac350568fd5dd0398e5d7bdb08c340.bindTooltip(
+            marker_e375802051fd74c31d5c05805bb005ab.bindTooltip(
                 `<div>
                      St. Joseph County &middot; 6 trap location(s) &middot; 51 day(s) sampled
                  </div>`,
@@ -949,7 +949,7 @@ window.addEventListener('load', () => setTimeout(boot, 300));
             );
         
     
-                marker_30ac350568fd5dd0398e5d7bdb08c340.setIcon(div_icon_387fd91e140fd8e576b53e2d23b7c0e2);
+                marker_e375802051fd74c31d5c05805bb005ab.setIcon(div_icon_e2081a33fad99f4359f633288363ec11);
             
 </script>
 </html>
