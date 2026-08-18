@@ -49,8 +49,13 @@
   /* two up on tablets, one up on phones, so the roses never get too small to read */
   @media (max-width:760px) { .figs { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:520px) { .figs { grid-template-columns:1fr; } }
-  .figs figure { margin:0; }
-  .figs a { display:block; border:1px solid var(--rule); background:#fff; padding:10px; }
+  /* plates vary in height (two roses versus six), so the frame is a flex column
+     and the caption is pushed to the bottom, keeping captions on one line
+     across each row */
+  .figs figure { margin:0; display:flex; flex-direction:column; height:100%; }
+  .figs a { display:flex; align-items:center; justify-content:center;
+            border:1px solid var(--rule); background:#fff; padding:10px;
+            flex:1 1 auto; }
   .figs img { width:100%; display:block; }
   .figs figcaption { margin-top:11px; text-align:center; }
   .figs .fttl { display:block; font-weight:700; font-size:14px; color:var(--ink);
