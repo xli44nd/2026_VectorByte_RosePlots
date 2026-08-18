@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mosquito seasonality, rose diagrams</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#5c5851; --rule:#e6e2db; --accent:#E3120B; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#fff; color:var(--ink);
+         font:15px/1.6 "Helvetica Neue", Arial, sans-serif; }
+  .wrap { max-width:860px; margin:0 auto; padding:56px 24px 80px; }
+  h1 { font:600 30px/1.2 Georgia,"Times New Roman",serif; margin:0; letter-spacing:.2px; }
+  h1::after { content:""; display:block; width:44px; height:3px;
+              background:var(--accent); margin:14px 0 0; }
+  .lede { color:var(--muted); margin:18px 0 0; max-width:60ch; }
+  h2 { font:600 19px/1.3 Georgia,"Times New Roman",serif; margin:44px 0 0; }
+  hr { border:0; border-top:1px solid var(--rule); margin:16px 0 0; }
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; }
+  th { text-align:left; font-weight:600; color:var(--muted); font-size:12px;
+       text-transform:uppercase; letter-spacing:.06em;
+       padding:0 12px 8px 0; border-bottom:1px solid var(--rule); }
+  td { padding:13px 12px 13px 0; border-bottom:1px solid var(--rule);
+       vertical-align:top; }
+  td.num { white-space:nowrap; color:var(--muted); }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .note { color:var(--muted); font-size:13.5px; margin-top:10px; }
+  ul { margin:12px 0 0; padding-left:20px; color:var(--muted); }
+  li { margin-bottom:7px; }
+  li b { color:var(--ink); font-weight:600; }
+  .figs { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+          gap:14px; margin-top:18px; }
+  .figs a { display:block; border:1px solid var(--rule); padding:8px; color:var(--muted);
+            font-size:12.5px; }
+  .figs img { width:100%; display:block; margin-bottom:7px; }
+  footer { margin-top:52px; padding-top:16px; border-top:1px solid var(--rule);
+           color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Mosquito seasonality</h1>
+  <p class="lede">Rose diagrams of monthly mosquito abundance, built from VecDyn
+  datasets. One rose per county per data provider. Values are mean individuals
+  per trap per day, averaged over the days actually sampled.</p>
+
+  <h2>Interactive maps</h2>
+  <hr>
+  <table>
+    <tr><th>Dataset</th><th>Coverage</th><th>Rows</th></tr>
+    <tr>
+      <td><a href="NorthCarolina_909_rose_map.html">North Carolina ovitrap survey</a></td>
+      <td>175 trap coordinates in 21 counties</td>
+      <td class="num">12,755</td>
+    </tr>
+    <tr>
+      <td><a href="Iowa_617_rose_map.html">Iowa state-wide surveillance, 1985</a></td>
+      <td>5 counties</td>
+      <td class="num">92,103</td>
+    </tr>
+    <tr>
+      <td><a href="StJoseph_216_rose_map.html">St. Joseph County, Indiana, 2023</a></td>
+      <td>2 counties</td>
+      <td class="num">1,498</td>
+    </tr>
+  </table>
+  <p class="note">Each map lets you switch between all mosquitoes, a single
+  species, sex or trap method, and between a shared scale and a per-site scale.
+  Hover a petal for that month's value and the number of days sampled.</p>
+
+  <h2>Reading a rose</h2>
+  <hr>
+  <ul>
+    <li>January is at the top, running clockwise, so June and July fall at the bottom.</li>
+    <li>Petal length is the mean number of individuals per trap per day for that month.</li>
+    <li><b>Each rose is scaled to its own peak</b>, printed above it in the figures.
+        A shared scale flattens the low-abundance species to nothing; the printed
+        peak keeps magnitudes comparable.</li>
+    <li><b>The number under each month is how many days the site was sampled.</b>
+        A month that was never sampled is drawn differently from one that was
+        sampled with nothing caught, so a gap in effort is never read as a
+        seasonal crash.</li>
+    <li>Species, sex and trap method are never aggregated together.</li>
+  </ul>
+
+  <h2>Figures</h2>
+  <hr>
+  <div class="figs">
+    <a href="figures/NorthCarolina_909_roses_by_species.png">
+      <img src="figures/NorthCarolina_909_roses_by_species.png" alt="">
+      North Carolina, top species</a>
+    <a href="figures/Iowa_617_roses_by_species.png">
+      <img src="figures/Iowa_617_roses_by_species.png" alt="">
+      Iowa, top species</a>
+    <a href="figures/Iowa_617_roses_by_sex.png">
+      <img src="figures/Iowa_617_roses_by_sex.png" alt="">
+      Iowa, by sex</a>
+    <a href="figures/Iowa_617_roses_by_trap.png">
+      <img src="figures/Iowa_617_roses_by_trap.png" alt="">
+      Iowa, by trap method</a>
+    <a href="figures/StJoseph_216_roses_by_species.png">
+      <img src="figures/StJoseph_216_roses_by_species.png" alt="">
+      St. Joseph, top species</a>
+    <a href="figures/StJoseph_216_roses_by_sex.png">
+      <img src="figures/StJoseph_216_roses_by_sex.png" alt="">
+      St. Joseph, by sex</a>
+    <a href="figures/StJoseph_216_roses_by_trap.png">
+      <img src="figures/StJoseph_216_roses_by_trap.png" alt="">
+      St. Joseph, by trap method</a>
+  </div>
+
+  <footer>
+    Data from the VectorByte VecDyn database. County assignment by point-in-polygon
+    join against the US Census TIGER county layer.
+  </footer>
+
+</div>
+</body>
+</html>
