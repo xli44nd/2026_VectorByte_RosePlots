@@ -44,8 +44,11 @@
   ul { margin:12px 0 0; padding-left:20px; color:var(--muted); }
   li { margin-bottom:7px; }
   li b { color:var(--ink); font-weight:600; }
-  .figs { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-          gap:34px 28px; margin-top:26px; }
+  .figs { display:grid; grid-template-columns:repeat(3,1fr);
+          gap:30px 22px; margin-top:26px; }
+  /* two up on tablets, one up on phones, so the roses never get too small to read */
+  @media (max-width:760px) { .figs { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px) { .figs { grid-template-columns:1fr; } }
   .figs figure { margin:0; }
   .figs a { display:block; border:1px solid var(--rule); background:#fff; padding:10px; }
   .figs img { width:100%; display:block; }
