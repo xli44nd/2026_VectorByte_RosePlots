@@ -21,11 +21,22 @@
   th { text-align:left; font-weight:600; color:var(--muted); font-size:12px;
        text-transform:uppercase; letter-spacing:.06em;
        padding:0 12px 8px 0; border-bottom:1px solid var(--rule); }
-  td { padding:13px 12px 13px 0; border-bottom:1px solid var(--rule);
-       vertical-align:top; }
+  td { padding:11px 12px 11px 0; border-bottom:1px solid var(--rule);
+       vertical-align:top; font-weight:400; }
   td.num { white-space:nowrap; color:var(--muted); }
-  a { color:var(--link); text-decoration:none; }
-  a:hover { text-decoration:underline; }
+  a { color:inherit; text-decoration:none; }
+
+  /* Clickable dataset titles. No colour and no button chrome: the cue is a half
+     step of weight, a little breathing room above and below, and a small arrow.
+     Enough to read as interactive on an academic page, not enough to shout. */
+  a.ds { display:inline-block; font-weight:500; padding:3px 0;
+         border-bottom:1px solid transparent; }
+  a.ds::after { content:" 92"; color:#9a958d; font-weight:400; font-size:12.5px; }
+  a.ds:hover { border-bottom-color:var(--ink); }
+  a.ds:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+
+  /* Ordinary prose links stay plain text with an underline on hover. */
+  .figs a:hover, footer a:hover { text-decoration:underline; }
   .note { color:var(--muted); font-size:13.5px; margin-top:10px; }
   ul { margin:12px 0 0; padding-left:20px; color:var(--muted); }
   li { margin-bottom:7px; }
@@ -52,17 +63,17 @@
   <table>
     <tr><th>Dataset</th><th>Coverage</th><th>Rows</th></tr>
     <tr>
-      <td><a href="NorthCarolina_909_rose_map.html">North Carolina ovitrap survey</a></td>
+      <td><a class="ds" href="NorthCarolina_909_rose_map.html">North Carolina ovitrap survey</a></td>
       <td>175 trap coordinates in 21 counties</td>
       <td class="num">12,755</td>
     </tr>
     <tr>
-      <td><a href="Iowa_617_rose_map.html">Iowa state-wide surveillance, 1985</a></td>
+      <td><a class="ds" href="Iowa_617_rose_map.html">Iowa state-wide surveillance, 1985</a></td>
       <td>5 counties</td>
       <td class="num">92,103</td>
     </tr>
     <tr>
-      <td><a href="StJoseph_216_rose_map.html">St. Joseph County, Indiana, 2023</a></td>
+      <td><a class="ds" href="StJoseph_216_rose_map.html">St. Joseph County, Indiana, 2023</a></td>
       <td>2 counties</td>
       <td class="num">1,498</td>
     </tr>
